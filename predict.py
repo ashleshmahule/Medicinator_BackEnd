@@ -43,8 +43,8 @@ def predict_class(sentence, model):
     p = bow(sentence, words,show_details=False)
     res = model.predict(np.array([p]))[0]
     
-    for r in res:
-        print((float(r)))
+    # for r in res:
+    #     print((float(r)))
 
     ERROR_THRESHOLD = 0.25
     results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
@@ -86,4 +86,4 @@ def chatbot_response(text):
     return res
 
 
-print(chatbot_response("need a doc"))
+print(chatbot_response("you know"))
