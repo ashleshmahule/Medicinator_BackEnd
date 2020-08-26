@@ -23,7 +23,7 @@ def getResponse():
     print(text)
     answer=predict.chatbot_response(text)
 
-    return answer
+    return jsonify(answer)
 
 
 if (__name__ == "__main__"):
