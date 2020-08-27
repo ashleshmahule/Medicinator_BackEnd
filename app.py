@@ -13,18 +13,28 @@ dotenv.load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
+
 @app.route('/')
 def home():
     return "Welcome"
 
+
 @app.route('/getResponse')
 def getResponse():
-    text=request.args.get('text')
+    text = request.args.get('text')
     print(text)
-    answer={}
-    answer['response'], answer['intent']=predict.chatbot_response(text)
+    answer = {}
+    answer['response'], answer['intent'] = predict.chatbot_response(text)
 
     return jsonify(answer['response'])
+
+
+@app.route('/getAlternate')
+def getAlternate():
+    query = request.args.get('query')
+    alternates = predict.findAlternate(query)
+
+    return jsonify(alternates)
 
 
 if (__name__ == "__main__"):
