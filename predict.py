@@ -66,7 +66,7 @@ def predict_class(sentence, model):
     for r in results:
         return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
 
-    #  print('returnlist ----------------->')
+    # print('returnlist ----------------->')
     # for r in return_list:
     #     print(r)
 
@@ -80,10 +80,11 @@ def getResponse(ints, intents_json):
             result = random.choice(i['answers'])
             break
     return result
+
 def chatbot_response(text):
     ints = predict_class(text, model)
     res = getResponse(ints, intents)
-    return res
+    return res, ints[0]['intent']
 
 
 print(chatbot_response("you know"))

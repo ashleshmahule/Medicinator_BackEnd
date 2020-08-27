@@ -21,9 +21,10 @@ def home():
 def getResponse():
     text=request.args.get('text')
     print(text)
-    answer=predict.chatbot_response(text)
+    answer={}
+    answer['response'], answer['intent']=predict.chatbot_response(text)
 
-    return jsonify(answer)
+    return jsonify(answer['response'])
 
 
 if (__name__ == "__main__"):
