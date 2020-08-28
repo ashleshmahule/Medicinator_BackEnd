@@ -112,4 +112,4 @@ def findAlternate(name):
 
 
 print(findAlternate("Mylanta"))
-print(chatbot_response("you know"))
+print(chatbot_response("not well"))

@@ -5,11 +5,15 @@ from flask import request
 from flask import jsonify
 import predict
 from flask_cors import CORS
+import json
 
 app = Flask(__name__)
 CORS(app)
 answer = {}
-answer['intent']='welcome'
+baseIntent = 'welcome'
+intent = ''
+
+
 
 @app.route('/')
 def home():
@@ -18,7 +22,10 @@ def home():
 
 @app.route('/getResponse')
 def getResponse():
-    text = request.args.get('text')
+    obj = request.args.get('object')
+    obj = json.loads(obj)
+    intent=obj['intent']
+    text = obj['query']
     print(text)
     answer['response'], answer['intent'] = predict.chatbot_response(text)
 
@@ -27,21 +34,34 @@ def getResponse():
 
 @app.route('/getAlternate')
 def getAlternate():
-    query = request.args.get('query')
-    alternates = predict.findAlternate(query)
-    seperator='\n'
-    altStr=seperator.join(alternates)
-
+    obj = request.args.get('object')
+    obj = json.loads(obj)
+    intent=obj['intent']
 
     tosend={}
-    tosend['response']=altStr
-    tosend['intent']=answer['intent']
 
+    if intent == 'medicine.alternate':
+        query = obj['query']
 
-    return jsonify(tosend)
+        alternates = predict.findAlternate(query)
+        seperator = '\n'
+        altStr = seperator.join(alternates)
 
+        tosend['response'] = altStr
+        tosend['intent'] = baseIntent
 
+        return jsonify(tosend)
 
+    else:
+        tosend['response'] = "Sorry, couldn't understand"
+        tosend['intent'] = baseIntent
+
+        return jsonify(tosend)
+
+@app.route('/getDiagnosis')
+def getDiagnosis():
+
+    return()
 
 
 if (__name__ == "__main__"):
