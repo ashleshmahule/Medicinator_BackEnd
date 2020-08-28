@@ -9,7 +9,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 answer = {}
-answer['intent']='greetings'
+answer['intent']='welcome'
 
 @app.route('/')
 def home():
