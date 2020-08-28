@@ -1,4 +1,3 @@
-import dotenv
 import os
 import sys
 from flask import Flask
@@ -6,9 +5,6 @@ from flask import request
 from flask import jsonify
 import predict
 from flask_cors import CORS
-
-dotenv.load_dotenv()
-
 
 app = Flask(__name__)
 CORS(app)
@@ -35,6 +31,9 @@ def getAlternate():
     alternates = predict.findAlternate(query)
 
     return jsonify(alternates)
+
+
+
 
 
 if (__name__ == "__main__"):

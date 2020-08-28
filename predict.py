@@ -7,12 +7,13 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 
-model = load_model('chatbot_model.h5')
+model = load_model('models/chatbot_model.h5')
 
-intents = json.loads(open('intents.json').read())
-alternateMeds = json.loads(open('sample.json').read())
-words = pickle.load(open('words.pkl', 'rb'))
-classes = pickle.load(open('classes.pkl', 'rb'))
+intents = json.loads(open('datasets/intents.json').read())
+alternateMeds = json.loads(open('datasets/sample.json').read())
+drugDetails = json.loads(open('datasets/drugs.json').read())
+words = pickle.load(open('datasets/words.pkl', 'rb'))
+classes = pickle.load(open('datasets/classes.pkl', 'rb'))
 
 
 def clean_up_sentence(sentence):
@@ -95,15 +96,15 @@ def chatbot_response(text):
 
 
 def findAlternate(name):
-    # with open('sample.json') as file:
-    #     data=json.load(file.read())
+    name=name.capitalize()
+    print(name)
     flag = False
     for m in alternateMeds:
         drugs = m['drugs']
 
         if name in drugs:
             flag = True
-            drugs.remove(name)
+            # drugs.remove(name)
             return drugs
 
     if flag != True:

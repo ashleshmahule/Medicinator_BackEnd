@@ -17,7 +17,7 @@ words=[]
 classes = []
 documents = []
 ignore_words = ['?', '!']
-data_file = open('datasets/intents.json').read()
+data_file = open('datasets/intents_2.json').read()
 intents = json.loads(data_file)
 
 for intent in intents['intents']:
@@ -45,8 +45,8 @@ print (len(classes), "classes", classes)
 
 # words == all words, vocabulary
 print (len(words), "unique lemmatized words", words)
-pickle.dump(words,open('datasets/words.pkl','wb'))
-pickle.dump(classes,open('datasets/classes.pkl','wb'))
+pickle.dump(words,open('datasets/words_2.pkl','wb'))
+pickle.dump(classes,open('datasets/classes_2.pkl','wb'))
 
 # creating our training data
 training = []
@@ -82,6 +82,8 @@ for doc in documents:
 random.shuffle(training)
 training = np.array(training)
 
+
+
 # create train and test lists. X - patterns, Y - intents
 train_x = list(training[:,0])
 train_y = list(training[:,1])
@@ -100,5 +102,5 @@ sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
-model.save('models/chatbot_model.h5', hist)
+model.save('models/chatbot_model_2.h5', hist)
 print("model created")
