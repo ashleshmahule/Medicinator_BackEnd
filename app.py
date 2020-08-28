@@ -22,7 +22,7 @@ def getResponse():
     answer = {}
     answer['response'], answer['intent'] = predict.chatbot_response(text)
 
-    return jsonify(answer['response'])
+    return jsonify(answer)
 
 
 @app.route('/getAlternate')
