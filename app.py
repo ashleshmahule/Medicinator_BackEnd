@@ -8,7 +8,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-
+answer = {}
 
 @app.route('/')
 def home():
@@ -19,7 +19,6 @@ def home():
 def getResponse():
     text = request.args.get('text')
     print(text)
-    answer = {}
     answer['response'], answer['intent'] = predict.chatbot_response(text)
 
     return jsonify(answer)
@@ -29,8 +28,16 @@ def getResponse():
 def getAlternate():
     query = request.args.get('query')
     alternates = predict.findAlternate(query)
+    seperator='\n'
+    altStr=seperator.join(alternates)
 
-    return jsonify(alternates)
+
+    tosend={}
+    tosend['alternates']=altStr
+    tosend['intent']=answer['intent']
+
+
+    return jsonify(tosend)
 
 
 
