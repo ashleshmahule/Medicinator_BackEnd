@@ -9,6 +9,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 answer = {}
+answer['intent']='greetings'
 
 @app.route('/')
 def home():
@@ -33,7 +34,7 @@ def getAlternate():
 
 
     tosend={}
-    tosend['alternates']=altStr
+    tosend['response']=altStr
     tosend['intent']=answer['intent']
 
 
