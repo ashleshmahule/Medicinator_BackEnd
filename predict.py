@@ -5,6 +5,9 @@ import numpy as np
 import pickle
 import nltk
 from nltk.stem import WordNetLemmatizer
+from textblob import TextBlob
+import re
+
 lemmatizer = WordNetLemmatizer()
 
 model = load_model('models/chatbot_model.h5')
@@ -17,6 +20,13 @@ classes = pickle.load(open('datasets/classes.pkl', 'rb'))
 
 
 def clean_up_sentence(sentence):
+    #spell check
+    words=[]
+    for s in sentence.split():
+        words.append(TextBlob(s).correct())
+
+    sentence=' '.join(map(str, words))
+
     # tokenization
     sentence_words = nltk.word_tokenize(sentence)
     # stemming
@@ -96,7 +106,7 @@ def chatbot_response(text):
 
 
 def findAlternate(name):
-    name=name.capitalize()
+    name = name.capitalize()
     print(name)
     flag = False
     for m in alternateMeds:
@@ -112,4 +122,4 @@ def findAlternate(name):
 
 
 print(findAlternate("Mylanta"))
-print(chatbot_response("not well"))
+print(chatbot_response("i neeed amblnce"))
