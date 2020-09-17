@@ -20,7 +20,7 @@ classes = pickle.load(open('datasets/classes.pkl', 'rb'))
 
 
 def clean_up_sentence(sentence):
-    #spell check
+    # spell check
     words=[]
     for s in sentence.split():
         words.append(TextBlob(s).correct())
@@ -114,8 +114,9 @@ def findAlternate(name):
 
         if name in drugs:
             flag = True
-            # drugs.remove(name)
-            return drugs
+            drugs_to_send=drugs
+            drugs_to_send.remove(name)
+            return drugs_to_send
 
     if flag != True:
         return ['No alternatives found in database']

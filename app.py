@@ -14,7 +14,6 @@ baseIntent = 'welcome'
 intent = ''
 
 
-
 @app.route('/')
 def home():
     return "Welcome"
@@ -24,7 +23,7 @@ def home():
 def getResponse():
     obj = request.args.get('object')
     obj = json.loads(obj)
-    intent=obj['intent']
+    intent = obj['intent']
     text = obj['query']
     print(text)
     answer['response'], answer['intent'] = predict.chatbot_response(text)
@@ -36,9 +35,9 @@ def getResponse():
 def getAlternate():
     obj = request.args.get('object')
     obj = json.loads(obj)
-    intent=obj['intent']
+    intent = obj['intent']
 
-    tosend={}
+    tosend = {}
 
     if intent == 'medicine.alternate':
         query = obj['query']
@@ -57,6 +56,7 @@ def getAlternate():
         tosend['intent'] = baseIntent
 
         return jsonify(tosend)
+
 
 @app.route('/getDiagnosis')
 def getDiagnosis():
