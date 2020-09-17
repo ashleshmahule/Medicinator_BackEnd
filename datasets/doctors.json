@@ -1,0 +1,26 @@
+[
+    {
+        "city":"Nagpur",
+        "specialization":"ENT",
+        "doctors":[
+            "Dr. Darakshan Parveen",
+            "Dr. Minal Gupta",
+            "Dr. Amit Ghatge"]
+    },
+    {
+        "city":"Nagpur",
+        "specialization":"Dentist",
+        "doctors":[
+            "Dr. Sanjog Chandak",
+            "Dr. Rashmi Gupta",
+            "Dr. Ketki Joglekar"]
+    },
+    {
+        "city":"Nagpur",
+        "specialization":"Pediatricians",
+        "doctors":[
+            "Dr. Rupesh S. Bhosale",
+            "Dr. Sharwari Rathi",
+            "Dr. Uday Bhodankar"]
+    }
+]
