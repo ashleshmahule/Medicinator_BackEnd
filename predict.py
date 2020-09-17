@@ -17,6 +17,7 @@ alternateMeds = json.loads(open('datasets/sample.json').read())
 drugDetails = json.loads(open('datasets/drugs.json').read())
 words = pickle.load(open('datasets/words.pkl', 'rb'))
 classes = pickle.load(open('datasets/classes.pkl', 'rb'))
+finddoc = json.loads(open('datasets/doctors.json').read())
 
 
 def clean_up_sentence(sentence):
@@ -119,6 +120,22 @@ def findAlternate(name):
 
     if flag != True:
         return ['No alternatives found in database']
+
+def findDoctor(city,specialization):
+    city = city.capitalize()
+    print(city)
+    flag = False
+    for m in finddoc:
+        doccity = m['city']
+        if doccity==city:
+            docSpec=m['specialization']
+            if docSpec==specialization:
+                doctors=m['docs']
+                flag=True
+                return doctors
+
+    if flag != True:
+        return ['No doctors with required expertise in given area']
 
 
 print(findAlternate("Mylanta"))

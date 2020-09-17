@@ -52,6 +52,26 @@ def getAlternate():
 
         return jsonify(tosend)
 
+@app.route('/findDoctor')
+def findDoctor():
+    obj = request.args.get('object')
+    obj = json.loads(obj)
+    intent=obj['intent']
+
+    tosend={}
+
+    if intent == 'doctor.find':
+        query = obj['query']
+
+        doctors = predict.findDoctor("nagpur",query)
+        seperator = '\n'
+        altStr = seperator.join(doctors)
+
+        tosend['response'] = altStr
+        tosend['intent'] = baseIntent
+
+        return jsonify(tosend)
+
     else:
         tosend['response'] = "Sorry, couldn't understand"
         tosend['intent'] = baseIntent
