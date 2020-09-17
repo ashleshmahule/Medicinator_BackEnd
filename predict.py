@@ -22,11 +22,11 @@ finddoc = json.loads(open('datasets/doctors.json').read())
 
 def clean_up_sentence(sentence):
     # spell check
-    words=[]
+    words = []
     for s in sentence.split():
         words.append(TextBlob(s).correct())
 
-    sentence=' '.join(map(str, words))
+    sentence = ' '.join(map(str, words))
 
     # tokenization
     sentence_words = nltk.word_tokenize(sentence)
@@ -115,24 +115,25 @@ def findAlternate(name):
 
         if name in drugs:
             flag = True
-            drugs_to_send=drugs
+            drugs_to_send = drugs
             drugs_to_send.remove(name)
             return drugs_to_send
 
     if flag != True:
         return ['No alternatives found in database']
 
-def findDoctor(city,specialization):
+
+def findDoctor(city, specialization):
     city = city.capitalize()
     print(city)
     flag = False
     for m in finddoc:
         doccity = m['city']
-        if doccity==city:
-            docSpec=m['specialization']
-            if docSpec==specialization:
-                doctors=m['docs']
-                flag=True
+        if doccity == city:
+            docSpec = m['specialization']
+            if docSpec == specialization:
+                doctors = m['doctors']
+                flag = True
                 return doctors
 
     if flag != True:
