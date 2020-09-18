@@ -8,6 +8,7 @@ from nltk.stem import WordNetLemmatizer
 from textblob import TextBlob
 import re
 
+nltk.download('wordnet')
 lemmatizer = WordNetLemmatizer()
 
 model = load_model('models/chatbot_model.h5')
