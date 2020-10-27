@@ -8,7 +8,6 @@ from nltk.stem import WordNetLemmatizer
 from textblob import TextBlob
 import re
 
-nltk.download('wordnet')
 lemmatizer = WordNetLemmatizer()
 
 model = load_model('models/chatbot_model.h5')
@@ -22,12 +21,12 @@ finddoc = json.loads(open('datasets/doctors.json').read())
 
 
 def clean_up_sentence(sentence):
-    # spell check
-    words = []
+    #spell check
+    words=[]
     for s in sentence.split():
         words.append(TextBlob(s).correct())
 
-    sentence = ' '.join(map(str, words))
+    sentence=' '.join(map(str, words))
 
     # tokenization
     sentence_words = nltk.word_tokenize(sentence)
@@ -116,26 +115,25 @@ def findAlternate(name):
 
         if name in drugs:
             flag = True
-            drugs_to_send = drugs
-            drugs_to_send.remove(name)
-            return drugs_to_send
+            # drugs.remove(name)
+            return drugs
 
     if flag != True:
         return ['No alternatives found in database']
 
-
-def findDoctor(city, specialization):
+def findDoctor(city,specialization):
     city = city.capitalize()
     print(city)
     flag = False
     for m in finddoc:
         doccity = m['city']
-        if doccity == city:
-            docSpec = m['specialization']
-            if docSpec == specialization:
-                doctors = m['doctors']
-                flag = True
-                return doctors
+        if doccity==city:
+            docSpec=m['specialization']
+            for spec in docSpec:
+                if spec==specialization:
+                    doctors=m['docs']
+                    flag=True
+                    return doctors
 
     if flag != True:
         return ['No doctors with required expertise in given area']
