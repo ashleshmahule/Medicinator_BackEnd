@@ -131,7 +131,8 @@ def findDoctor(city,specialization):
             docSpec=m['specialization']
             for spec in docSpec:
                 if spec==specialization:
-                    doctors=m['docs']
+                    doctors=m['doctors']
+                    print(doctors)
                     flag=True
                     return doctors
 
