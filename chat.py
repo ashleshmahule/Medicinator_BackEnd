@@ -95,7 +95,6 @@ model.add(Dropout(0.5))
 # number of neurons equal to number of intents to predict output intent with softmax
 model.add(Dense(len(train_y[0]), activation='softmax'))
 
-# SGD == Stochastic gradient descent and Nesterov accelerated gradient
 sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
