@@ -211,10 +211,10 @@ def predictDisease():
 
 @app.route('/findCovidStats')
 def findCovidStats():
-    ambulance=['Maharashtra \t Cases:1.5M Recovered:1.3M','Delhi \t Cases:1.2M Recovered:1M','Kerela \t Cases:0.8M Recovered 0.3M']
+    stats=['Maharashtra \t Cases:1.5M Recovered:1.3M','Delhi \t Cases:1.2M Recovered:1M','Kerela \t Cases:0.8M Recovered 0.3M']
     tosend={}
     seperator = '\n'
-    altStr = seperator.join(ambulance)
+    altStr = seperator.join(stats)
     tosend['response'] = altStr
     tosend['intent'] = baseIntent
     return jsonify(tosend)
@@ -222,9 +222,9 @@ def findCovidStats():
 
 @app.route('/findHealthTips')
 def findHealthTips():
-    ambulance=healthtips.split("\n")
+    tips=healthtips.split("\n")
     tosend={}
-    tosend['response'] = random.choice(ambulance)
+    tosend['response'] = random.choice(tips)
     tosend['intent'] =  baseIntent
     return jsonify(tosend)
 
