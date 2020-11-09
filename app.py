@@ -17,106 +17,7 @@ answer = {}
 baseIntent = 'welcome'
 intent = ''
 
-healthtips = """	Establish regular exercise routines in your life.
-	Continue to work on eating healthily; vigilance will always be needed to be successful.
-	See your doctor regularly for wellness exams and health/disease screenings/tests.
-	If you have symptoms, seek medical attention; don’t ignore warning signs of issues.
-	Along with your body, make efforts to stimulate and strengthen your brain as you age.
-	Maintain satisfying social relationships.
-	Keep involved in activities and pursuits that interest you.
-	Try to maintain a positive attitude to support your resilience when life hands you setbacks.
-	Keep your body hydrated with water.
-	Avoid toxins and unhealthy environments.
-	Take care of your skin.
-	Know your health numbers and what they mean, regardless of how healthy or unhealthy you are now.
-	Get adequate sleep.
-	Spend less time in front of the TV; at minimum, get up and move during commercials.
-	Learn to relax more.
-	Focus less on your weight, and more on your overall health.
-	Find things to be grateful for in your life.
-	Don’t forget to smile and laugh routinely.
-	Do something fun every day.
-	Have a sense of purpose in your life.
-	Let go of the past, focus on what you can do to improve your present and future.
-	Give your focused attention on what you can do to address your most unhealthy habit.
-	Remind yourself it takes time and patience to change ingrained habits.
-	Know your family health history.
-	Eat a variety of foods, especially fruits and vegetables.
-	Limit your use of alcohol.
-	Don’t forget your dental health.
-	Don’t forget your eye health.
-	Continue to educate yourself about overall health and wellness, over time new findings result in updated recommendations from health experts.
-	Replace bad habits with good ones.
-	Learn to cook healthy foods you enjoy.
-	Learn to modify recipes you love to make them more nutritious.
-	Allow yourself to splurge periodically on special foods in limited quantities or frequencies.
-	Slip vegetables into your favorite recipes.
-	Make sure you get some good fats in your diet.
-	Stretch your body every day.
-	Eat more fish.
-	Start each day with a healthy breakfast.
-	Spend some time in solitude on a regular basis.
-	Wash your hands often.
-	Focus on eating whole-grains when you eat bread products.
-	Make sure that the protein foods you eat are leaner versions.
-	Develop a ‘gentle firmness’ with yourself; be kind but honest in your mental ‘self talk’.
-	Remember that small changes can really add up and lead to big results.
-	Try to eat more natural/raw/core foods, and less processed food.
-	Try to eat a variety of food ‘colors’.
-	Try to eat more volume and fewer calories in your diet.
-	Experiment with food combinations and spices to see what you like.
-	Reward yourself for your positive efforts in ways that do not involve food whenever possible.
-	Enjoy your food, take time to sit down and concentrate on what you are eating.
-	Watch salt, sugar, harmful fats and other additive levels in your food.
-	Consider taking vitamins and other supplements as recommended by your doctor or pharmacist.
-	When someone asks you what you would like for a gift, be ready with a healthy idea.
-	Write down your health goals and prioritize them.
-	Track your progress on health goals so you have feedback to review.
-	Have realistic expectations for yourself and your body.
-	Compete only with yourself, not others.
-	Look for healthy role models in your life.
-	Ask for tips or advice from people in your life who are healthy and/or struggling with similar challenges.
-	Develop healthy rituals but be prepared to be flexible as needed.
-	Plan and allow time for you to keep up with your healthy habits and routines.
-	Don’t forget portion control.
-	Concentrate of keeping your body strong and flexible.
-	Seek to resolve nagging problems in your life.
-	Accept the things in your life that you cannot change.
-	Do something for others just because you can.
-	Try to be spontaneous or try something new each week.
-	Gravitate towards healthy people whenever possible.
-	Use your support systems.
-	Expect setbacks and plan for them if possible.
-	Take your medications as prescribed and report side effects to your physician.
-	Make sure your physician(s) have complete information about your health.
-	Take breaks during your work day.
-	Learn to breathe properly.
-	Don’t engage in wishful thinking about your health; take action, even small steps, as soon as you can to get going towards a healthier you.
-	If you are ill or have an injury, rest and/or get treatment.
-	Use trusted websites for excellent health advice and/or recipes.
-	Listen to your body.
-	Are you already managing a specific condition, like diabetes or arthritis? Read up on what you can continue to do to mitigate progression of the condition through any lifestyle changes.
-	Watch the level of over the counter medications you use.
-	Make sure you understand contraindications and/or interactions for any medication you take or conditions you have, including improper mixing of meds and other meds and/or food.
-	Join a health related class or program, a great way to get new ideas/tips and/or supports.
-	Carry healthy snacks with you.
-	Read nutrition labels regularly.
-	Get rid of excess clutter in both your physical and mental world.
-	Stop doing what doesn’t work for you, and keep doing what does work for you.
-	Be willing to try a new sport or physical activity at least once to see if you would enjoy it.
-	Develop an array of exercise and physical activity options in your life to keep active.
-	Know the key nutritious healthy or ‘super’ foods and include them in your diet.
-	Keep educating yourself about health update information.
-	Remember that while you may have your own health challenges, you are likely someone else’s role model in some aspect of their life.
-	Make yourself ‘work’ for a special food through an exercise ‘payment’ first; you may find after the exercise you really don’t want the food.
-	Understand that - as with all important aspects of life - being healthy will take some work and effort on your part and it will be worth it over the long haul.
-	Consider rewarding yourself with cash; save up what you would have spent on unhealthy foods or tobacco and use the money to purchase something you would really love.
-	Whenever you need to do so, just start over fresh, at the next meal, the next day, the next month, the next year, whichever comes first for you.
-	Understand that being healthy or unhealthy is a choice you get to make continually through many daily decisions.
-	The more you develop other interests and activities in your life, the less appealing over eating or inactivity will be for you.
-	The way out of any rut is simple, just do it; get started in any way that you can.
-	Post reminders, incentives or inspiration for yourself to see to help support your goals.
-	Don’t ever give up on efforts to improve your health."""
+healthtips = """Establish regular exercise routines in your life.\nContinue to work on eating healthily; vigilance will always be needed to be successful.\nSee your doctor regularly for wellness exams and health/disease screenings/tests.\nIf you have symptoms, seek medical attention; don’t ignore warning signs of issues.\nAlong with your body, make efforts to stimulate and strengthen your brain as you age.\nMaintain satisfying social relationships.\nKeep involved in activities and pursuits that interest you.\nTry to maintain a positive attitude to support your resilience when life hands you setbacks.\nKeep your body hydrated with water.\nAvoid toxins and unhealthy environments.\nTake care of your skin.\nKnow your health numbers and what they mean, regardless of how healthy or unhealthy you are now.\nGet adequate sleep.\nSpend less time in front of the TV; at minimum, get up and move during commercials.\nLearn to relax more.\nFocus less on your weight, and more on your overall health.\nFind things to be grateful for in your life.\nDon’t forget to smile and laugh routinely.\nDo something fun every day.\nHave a sense of purpose in your life.\nLet go of the past, focus on what you can do to improve your present and future.\nGive your focused attention on what you can do to address your most unhealthy habit.\nRemind yourself it takes time and patience to change ingrained habits.\nKnow your family health history.\nEat a variety of foods, especially fruits and vegetables.\nLimit your use of alcohol.\nDon’t forget your dental health.\nDon’t forget your eye health.\nContinue to educate yourself about overall health and wellness, over time new findings result in updated recommendations from health experts.\nReplace bad habits with good ones.\nLearn to cook healthy foods you enjoy.\nLearn to modify recipes you love to make them more nutritious.\nAllow yourself to splurge periodically on special foods in limited quantities or frequencies.\nSlip vegetables into your favorite recipes.\nMake sure you get some good fats in your diet.\nStretch your body every day.\nEat more fish.\nStart each day with a healthy breakfast.\nSpend some time in solitude on a regular basis.\nWash your hands often.\nFocus on eating whole-grains when you eat bread products.\nMake sure that the protein foods you eat are leaner versions.\nDevelop a ‘gentle firmness’ with yourself; be kind but honest in your mental ‘self talk’.\nRemember that small changes can really add up and lead to big results.\nTry to eat more natural/raw/core foods, and less processed food.\nTry to eat a variety of food ‘colors’.\nTry to eat more volume and fewer calories in your diet.\nExperiment with food combinations and spices to see what you like.\nReward yourself for your positive efforts in ways that do not involve food whenever possible.\nEnjoy your food, take time to sit down and concentrate on what you are eating.\nWatch salt, sugar, harmful fats and other additive levels in your food.\nConsider taking vitamins and other supplements as recommended by your doctor or pharmacist.\nWhen someone asks you what you would like for a gift, be ready with a healthy idea.\nWrite down your health goals and prioritize them.\nTrack your progress on health goals so you have feedback to review.\nHave realistic expectations for yourself and your body.\nCompete only with yourself, not others.\nLook for healthy role models in your life.\nAsk for tips or advice from people in your life who are healthy and/or struggling with similar challenges.\nDevelop healthy rituals but be prepared to be flexible as needed.\nPlan and allow time for you to keep up with your healthy habits and routines.\nDon’t forget portion control.\nConcentrate of keeping your body strong and flexible.\nSeek to resolve nagging problems in your life.\nAccept the things in your life that you cannot change.\nDo something for others just because you can.\nTry to be spontaneous or try something new each week.\nGravitate towards healthy people whenever possible.\nUse your support systems.\nExpect setbacks and plan for them if possible.\nTake your medications as prescribed and report side effects to your physician.\nMake sure your physician(s) have complete information about your health.\nTake breaks during your work day.\nLearn to breathe properly.\nDon’t engage in wishful thinking about your health; take action, even small steps, as soon as you can to get going towards a healthier you.\nIf you are ill or have an injury, rest and/or get treatment.\nUse trusted websites for excellent health advice and/or recipes.\nListen to your body.\nAre you already managing a specific condition, like diabetes or arthritis? Read up on what you can continue to do to mitigate progression of the condition through any lifestyle changes.\nWatch the level of over the counter medications you use.\nMake sure you understand contraindications and/or interactions for any medication you take or conditions you have, including improper mixing of meds and other meds and/or food.\nJoin a health related class or program, a great way to get new ideas/tips and/or supports.\nCarry healthy snacks with you.\nRead nutrition labels regularly.\nGet rid of excess clutter in both your physical and mental world.\nStop doing what doesn’t work for you, and keep doing what does work for you.\nBe willing to try a new sport or physical activity at least once to see if you would enjoy it.\nDevelop an array of exercise and physical activity options in your life to keep active.\nKnow the key nutritious healthy or ‘super’ foods and include them in your diet.\nKeep educating yourself about health update information.\nRemember that while you may have your own health challenges, you are likely someone else’s role model in some aspect of their life.\nMake yourself ‘work’ for a special food through an exercise ‘payment’ first; you may find after the exercise you really don’t want the food.\nUnderstand that - as with all important aspects of life - being healthy will take some work and effort on your part and it will be worth it over the long haul.\nConsider rewarding yourself with cash; save up what you would have spent on unhealthy foods or tobacco and use the money to purchase something you would really love.\nWhenever you need to do so, just start over fresh, at the next meal, the next day, the next month, the next year, whichever comes first for you.\nUnderstand that being healthy or unhealthy is a choice you get to make continually through many daily decisions.\nThe more you develop other interests and activities in your life, the less appealing over eating or inactivity will be for you.\nThe way out of any rut is simple, just do it; get started in any way that you can.\nPost reminders, incentives or inspiration for yourself to see to help support your goals.\nDon’t ever give up on efforts to improve your health."""
 
 
 @app.route('/')
@@ -189,7 +90,7 @@ def findDoctor():
 @app.route('/findAmbulance')
 def findAmbulance():
     ambulance = ['Tiwari Ambulance services', 'Falcon Emergency Air and Train Ambulance Service',
-        'Om Sai Ambulance Service', 'Sagar Ambulance']
+                 'Om Sai Ambulance Service', 'Sagar Ambulance']
     tosend = {}
 
     obj = request.args.get('object')
@@ -199,13 +100,13 @@ def findAmbulance():
     tosend = {}
 
     if intent == 'ambulance.find':
-	    query = obj['query']
-	    seperator = '\n'
-	    altStr = seperator.join(ambulance)
-	    tosend['response'] = ambulance[random.choice([0,1,2,3])]
-	    tosend['intent'] = baseIntent
-	    return jsonify(tosend)
-	
+        query = obj['query']
+        seperator = '\n'
+        altStr = seperator.join(ambulance)
+        tosend['response'] = ambulance[random.choice([0, 1, 2, 3])]
+        tosend['intent'] = baseIntent
+        return jsonify(tosend)
+
     else:
         tosend['response'] = "Sorry, couldn't understand"
         tosend['intent'] = baseIntent
@@ -214,22 +115,23 @@ def findAmbulance():
 
 @app.route('/predictDisease')
 def predictDisease():
-    tosend={}
+    tosend = {}
 
     obj = request.args.get('object')
     print(obj)
-    x = requests.get('https://diseasepredtictor.herokuapp.com/getDisease?query='+obj)
+    x = requests.get(
+        'https://diseasepredtictor.herokuapp.com/getDisease?query='+obj)
     print(x.json()['disease'])
     tosend['response'] = x.json()['disease'][0]
     tosend['intent'] = baseIntent
     return jsonify(tosend)
 
 
-
 @app.route('/findCovidStats')
 def findCovidStats():
-    stats=['Maharashtra \t Cases:1.5M Recovered:1.3M','Delhi \t Cases:1.2M Recovered:1M','Kerela \t Cases:0.8M Recovered 0.3M']
-    tosend={}
+    stats = ['Maharashtra \t Cases:1.5M Recovered:1.3M',
+             'Delhi \t Cases:1.2M Recovered:1M', 'Kerela \t Cases:0.8M Recovered 0.3M']
+    tosend = {}
     seperator = '\n'
     altStr = seperator.join(stats)
     tosend['response'] = altStr
@@ -240,23 +142,24 @@ def findCovidStats():
 @app.route('/findHealthTips')
 def findHealthTips():
 
-	obj = request.args.get('object')
-	obj = json.loads(obj)
-	intent = obj['intent']
-	
-	tips=healthtips.split("\n")
-	tosend={}
-	
-	if intent == 'health.tips':
-	    query = obj['query']
-	    tosend['response'] = random.choice(tips)
-	    tosend['intent'] =  baseIntent
-	    return jsonify(tosend)
+    obj = request.args.get('object')
+    obj = json.loads(obj)
+    intent = obj['intent']
 
-	else:
-		tosend['response'] = "Sorry, couldn't understand"
-		tosend['intent'] = baseIntent
-		return jsonify(tosend)
+    tips = healthtips.split("\n")
+    tosend = {}
+
+    if intent == 'health.tips':
+        query = obj['query']
+        tosend['response'] = random.choice(tips)
+        tosend['intent'] = baseIntent
+        return jsonify(tosend)
+
+    else:
+        tosend['response'] = "Sorry, couldn't understand"
+        tosend['intent'] = baseIntent
+        return jsonify(tosend)
+
 
 if (__name__ == "__main__"):
     app.run()
