@@ -37,7 +37,7 @@ def getResponse():
 
     if(intent=='health.tips'):
 	    tips = healthtips.split("\n")
-	    tosend['response'] = random.choice(tips)
+	    tosend['response'] = "Here is a health tip" + "\n" + random.choice(tips)
 	    tosend['intent'] = baseIntent
 	    return jsonify(tosend)
 
