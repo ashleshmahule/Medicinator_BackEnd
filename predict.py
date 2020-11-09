@@ -22,12 +22,14 @@ finddoc = json.loads(open('datasets/doctors.json').read())
 
 def clean_up_sentence(sentence):
     #spell check
-    words=[]
-    for s in sentence.split():
-        words.append(TextBlob(s).correct())
+    if('covid' not in sentence):
+        words=[]
+        for s in sentence.split():
+            words.append(TextBlob(s).correct())
 
-    sentence=' '.join(map(str, words))
-
+        sentence=' '.join(map(str, words))
+   
+    print(sentence)
     # tokenization
     sentence_words = nltk.word_tokenize(sentence)
     # stemming
@@ -141,4 +143,4 @@ def findDoctor(city,specialization):
 
 
 print(findAlternate("Mylanta"))
-print(chatbot_response("i neeed amblnce"))
+print(chatbot_response("covid stats"))

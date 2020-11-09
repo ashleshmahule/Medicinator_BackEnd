@@ -171,12 +171,13 @@
         {
             "tag": "covid.stats",
             "utterances": [
+                "covid stats",
                 "tell me covid stats",
                 "what are the covid cases",
                 "tell me about corona virus",
                 "how many corona patients are near me"
             ],
-            "amswers": [
+            "answers": [
                 "Here are some statistics"
             ]
         },
