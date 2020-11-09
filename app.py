@@ -32,9 +32,18 @@ def getResponse():
     intent = obj['intent']
     text = obj['query']
     print(text)
-    answer['response'], answer['intent'] = predict.chatbot_response(text)
 
-    return jsonify(answer)
+    tosend={}
+
+    if(intent=='health.tips'):
+	    tips = healthtips.split("\n")
+	    tosend['response'] = random.choice(tips)
+	    tosend['intent'] = baseIntent
+	    return jsonify(tosend)
+
+    else:
+	    answer['response'], answer['intent'] = predict.chatbot_response(text)
+	    return jsonify(answer)
 
 
 @app.route('/getAlternate')
@@ -137,29 +146,6 @@ def findCovidStats():
     tosend['response'] = altStr
     tosend['intent'] = baseIntent
     return jsonify(tosend)
-
-
-@app.route('/findHealthTips')
-def findHealthTips():
-
-    obj = request.args.get('object')
-    obj = json.loads(obj)
-    intent = obj['intent']
-
-    tips = healthtips.split("\n")
-    tosend = {}
-
-    if intent == 'health.tips':
-        query = obj['query']
-        tosend['response'] = random.choice(tips)
-        tosend['intent'] = baseIntent
-        return jsonify(tosend)
-
-    else:
-        tosend['response'] = "Sorry, couldn't understand"
-        tosend['intent'] = baseIntent
-        return jsonify(tosend)
-
 
 if (__name__ == "__main__"):
     app.run()
