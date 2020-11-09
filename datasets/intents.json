@@ -130,11 +130,11 @@
             ],
 
             "answers": [
-                "Ambulance on its way",
-                "Calling for an ambulance",
-                "Ambulance will be at your location at the earliest",
-                "routing ambulance",
-                "working on it, calling an ambulance"
+                "Ambulance on its way, where do you need it?",
+                "Calling for an ambulance, where do you need it?",
+                "Ambulance will be at your location at the earliest, where do you need it?",
+                "routing ambulance, where do you need it?",
+                "working on it, calling an ambulance, where do you need it?"
             ]
         },
         {
@@ -175,6 +175,9 @@
                 "what are the covid cases",
                 "tell me about corona virus",
                 "how many corona patients are near me"
+            ],
+            "amswers": [
+                "Here are some statistics"
             ]
         },
         {
@@ -185,6 +188,9 @@
                 "how do i be healthy",
                 "how to stay healthy",
                 "suggest some tips"
+            ],
+            "answers": [
+                "Here are some health tips"
             ]
         }
     ]

@@ -202,7 +202,7 @@ def findAmbulance():
 	    query = obj['query']
 	    seperator = '\n'
 	    altStr = seperator.join(ambulance)
-	    tosend['response'] = altStr
+	    tosend['response'] = ambulance[random.choice([0,1,2,3])]
 	    tosend['intent'] = baseIntent
 	    return jsonify(tosend)
 	
