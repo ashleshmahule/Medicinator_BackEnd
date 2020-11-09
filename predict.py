@@ -22,7 +22,7 @@ finddoc = json.loads(open('datasets/doctors.json').read())
 
 def clean_up_sentence(sentence):
     #spell check
-    if('covid' not in sentence):
+    if('covid' not in sentence and 'Covid' not in sentence):
         words=[]
         for s in sentence.split():
             words.append(TextBlob(s).correct())
@@ -143,4 +143,4 @@ def findDoctor(city,specialization):
 
 
 print(findAlternate("Mylanta"))
-print(chatbot_response("covid stats"))
+print(chatbot_response("Covid stats"))
