@@ -90,7 +90,9 @@
         {
             "tag": "diagnosis.start",
             "utterances": [
-                "I'm not feeling well"
+                "I'm not feeling well",
+                "i'm sick",
+                "diagnose me"
             ],
 
             "answers": [
@@ -164,6 +166,25 @@
             "answers": [
                 "Here are your past prescriptions",
                 "Have a look at your past precriptions"
+            ]
+        },
+        {
+            "tag": "covid.stats",
+            "utterances": [
+                "tell me covid stats",
+                "what are the covid cases",
+                "tell me about corona virus",
+                "how many corona patients are near me"
+            ]
+        },
+        {
+            "tag": "health.tips",
+            "utterances": [
+                "tell me some tips",
+                "how to be fit",
+                "how do i be healthy",
+                "how to stay healthy",
+                "suggest some tips"
             ]
         }
     ]

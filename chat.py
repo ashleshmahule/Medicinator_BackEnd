@@ -63,19 +63,19 @@ for doc in documents:
     pattern_words = doc[0]
     # lemmatize each word - create base word, in attempt to represent related words
     pattern_words = [lemmatizer.lemmatize(word.lower()) for word in pattern_words]
-    print(pattern_words)
+    # print(pattern_words)
 
     # create our bag of words array with 1, if word match found in current pattern
     for w in words:
-        print(w)
+        # print(w)
         bag.append(1) if w in pattern_words else bag.append(0)
         # output is a '0' for each tag and '1' for current tag (for each pattern)
         output_row = list(output_empty)
 
-        print(bag)
-        print(doc)
+        # print(bag)
+        # print(doc)
         output_row[classes.index(doc[1])] = 1
-        print(output_row)
+        # print(output_row)
         training.append([bag, output_row])
 
 # shuffle features and turn into np.array

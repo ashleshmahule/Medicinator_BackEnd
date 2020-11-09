@@ -17,7 +17,7 @@ answer = {}
 baseIntent = 'welcome'
 intent = ''
 
-healthtips="""	Establish regular exercise routines in your life.
+healthtips = """	Establish regular exercise routines in your life.
 	Continue to work on eating healthily; vigilance will always be needed to be successful.
 	See your doctor regularly for wellness exams and health/disease screenings/tests.
 	If you have symptoms, seek medical attention; don’t ignore warning signs of issues.
@@ -128,7 +128,7 @@ def home():
 def getResponse():
     obj = request.args.get('object')
     obj = json.loads(obj)
-    intent=obj['intent']
+    intent = obj['intent']
     text = obj['query']
     print(text)
     answer['response'], answer['intent'] = predict.chatbot_response(text)
@@ -140,9 +140,9 @@ def getResponse():
 def getAlternate():
     obj = request.args.get('object')
     obj = json.loads(obj)
-    intent=obj['intent']
+    intent = obj['intent']
 
-    tosend={}
+    tosend = {}
 
     if intent == 'medicine.alternate':
         query = obj['query']
@@ -156,21 +156,23 @@ def getAlternate():
 
         return jsonify(tosend)
 
+
 @app.route('/findDoctor')
 def findDoctor():
     obj = request.args.get('object')
     obj = json.loads(obj)
-    intent=obj['intent']
+    intent = obj['intent']
 
-    tosend={}
+    tosend = {}
 
     if intent == 'doctor.find':
         query = obj['query']
 
-        doctors = predict.findDoctor("nagpur",query)
+        doctors = predict.findDoctor("nagpur", query)
         altStr = ""
         for doc in doctors:
-            altStr = altStr + doc['name'] +"\n" + doc['address'] + "\n" + doc['phone'] + "\n\n"
+            altStr = altStr + doc['name'] + "\n" + \
+                doc['address'] + "\n" + doc['phone'] + "\n\n"
 
         tosend['response'] = altStr
         tosend['intent'] = baseIntent
@@ -183,15 +185,30 @@ def findDoctor():
 
         return jsonify(tosend)
 
+
 @app.route('/findAmbulance')
 def findAmbulance():
-    ambulance=['Tiwari Ambulance services','Falcon Emergency Air and Train Ambulance Service','Om Sai Ambulance Service','Sagar Ambulance']
-    tosend={}
-    seperator = '\n'
-    altStr = seperator.join(ambulance)
-    tosend['response'] = altStr
-    tosend['intent'] = baseIntent
-    return jsonify(tosend)
+    ambulance = ['Tiwari Ambulance services', 'Falcon Emergency Air and Train Ambulance Service',
+        'Om Sai Ambulance Service', 'Sagar Ambulance']
+    tosend = {}
+
+    obj = request.args.get('object')
+    obj = json.loads(obj)
+    intent = obj['intent']
+
+    tosend = {}
+
+    if intent == 'ambulance.find':
+	    query = obj['query']
+	    seperator = '\n'
+	    altStr = seperator.join(ambulance)
+	    tosend['response'] = altStr
+	    tosend['intent'] = baseIntent
+	    return jsonify(tosend)
+	
+    else:
+        tosend['response'] = "Sorry, couldn't understand"
+        tosend['intent'] = baseIntent
 
 
 
