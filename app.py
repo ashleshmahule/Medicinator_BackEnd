@@ -209,14 +209,14 @@ def findAmbulance():
     else:
         tosend['response'] = "Sorry, couldn't understand"
         tosend['intent'] = baseIntent
-
+        return jsonify(tosend)
 
 
 @app.route('/predictDisease')
 def predictDisease():
     tosend={}
 
-    obj = request.args.get('query')
+    obj = request.args.get('object')
     print(obj)
     x = requests.get('https://diseasepredtictor.herokuapp.com/getDisease?query='+obj)
     print(x.json()['disease'])
@@ -239,13 +239,24 @@ def findCovidStats():
 
 @app.route('/findHealthTips')
 def findHealthTips():
-    tips=healthtips.split("\n")
-    tosend={}
-    tosend['response'] = random.choice(tips)
-    tosend['intent'] =  baseIntent
-    return jsonify(tosend)
 
+	obj = request.args.get('object')
+	obj = json.loads(obj)
+	intent = obj['intent']
+	
+	tips=healthtips.split("\n")
+	tosend={}
+	
+	if intent == 'health.tips':
+	    query = obj['query']
+	    tosend['response'] = random.choice(tips)
+	    tosend['intent'] =  baseIntent
+	    return jsonify(tosend)
 
+	else:
+		tosend['response'] = "Sorry, couldn't understand"
+		tosend['intent'] = baseIntent
+		return jsonify(tosend)
 
 if (__name__ == "__main__"):
     app.run()
