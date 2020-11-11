@@ -12,7 +12,7 @@ lemmatizer = WordNetLemmatizer()
 
 model = load_model('models/chatbot_model.h5')
 
-intents = json.loads(open('datasets/intents.json').read())
+intents = json.loads(open('datasets/intents.json', encoding='utf-8').read())
 alternateMeds = json.loads(open('datasets/sample.json').read())
 drugDetails = json.loads(open('datasets/drugs.json').read())
 words = pickle.load(open('datasets/words.pkl', 'rb'))
@@ -143,4 +143,4 @@ def findDoctor(city,specialization):
 
 
 print(findAlternate("Mylanta"))
-print(chatbot_response("Covid stats"))
+print(chatbot_response("bye"))

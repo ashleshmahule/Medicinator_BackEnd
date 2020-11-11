@@ -18,29 +18,31 @@
                 "yo"
             ],
             "answers": [
+                "नमस्कार",
                 "Hi! What can I do for you?",
                 "Hey! How can I help you?",
                 "Hey there! Do you need any help?",
                 "Greetings! What can I do for you?",
-                "Great, how can I help?"
+                "Great, how can I help?",
+                "क्या मेरे द्वारा आपकी कोई सहायता हो सकती है?",
+                "हे! मुझे बताओ तुम्हें क्या चाहिए?"
             ]
         },
         {
             "tag": "goodbye",
             "utterances": [
-                "Goodbye",
+                "goodbye",
                 "goodbye for now",
-                "Thank you for helping. Goodbye",
-                "Bye",
+                "thank you for helping. goodbye",
+                "bye",
                 "okay see you later",
                 "bye for now",
                 "i must go"
             ],
             "answers": [
-                "Goodbye.",
-                "Until next time",
-                "See you soon!",
-                "See you next time."
+                "अलविदा",
+                "धन्यवाद",
+                "मदद के लिए हमेशा तैयार"
             ]
         },
         {
@@ -151,7 +153,8 @@
 
             "answers": [
                 "Please provide name of medicine",
-                "What is the name of medicine whose alternate you need?"
+                "What is the name of medicine whose alternate you need?",
+                "मुझे दवा का नाम बताओ"
             ]
         },
         {
