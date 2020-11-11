@@ -143,4 +143,4 @@ def findDoctor(city,specialization):
 
 
 print(findAlternate("Mylanta"))
-print(chatbot_response("goodbye"))
+print(chatbot_response("Bye"))
