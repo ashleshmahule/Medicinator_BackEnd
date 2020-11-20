@@ -11,6 +11,8 @@ from tensorflow.python.keras import Sequential
 from tensorflow.keras.optimizers import SGD
 import random
 from tensorflow.python.keras.layers import Dense, Dropout, Activation
+import pydot
+from matplotlib import pyplot
 
 
 words=[]
@@ -95,9 +97,25 @@ model.add(Dropout(0.5))
 # number of neurons equal to number of intents to predict output intent with softmax
 model.add(Dense(len(train_y[0]), activation='softmax'))
 
+tf.keras.utils.plot_model(model, to_file="img.png", show_shapes=True)
+
+
 sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
 model.save('models/chatbot_model.h5', hist)
 print("model created")
+
+# pyplot.subplot(211)
+# pyplot.title('Loss')
+# pyplot.plot(hist.history['loss'], label='train')
+# pyplot.plot(hist.history['val_loss'], label='test')
+# pyplot.legend()
+# # plot accuracy during training
+# pyplot.subplot(212)
+# pyplot.title('Accuracy')
+# pyplot.plot(hist.history['accuracy'], label='train')
+# pyplot.plot(hist.history['val_accuracy'], label='test')
+# pyplot.legend()
+# pyplot.show()
